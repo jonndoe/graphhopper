@@ -14,6 +14,8 @@ ENV JAVA_OPTS "-Xmx1g -Xms1g -Ddw.server.application_connectors[0].bind_host=0.0
 
 RUN mkdir -p /data
 
+# COPY russia_northwestern-fed-district-latest.osm.pbf ./data
+
 WORKDIR /graphhopper
 
 COPY --from=build /graphhopper/web/target/*.jar ./web/target/
@@ -26,4 +28,4 @@ EXPOSE 8989
 
 ENTRYPOINT [ "./graphhopper.sh", "web" ]
 
-CMD [ "/data/europe_germany_berlin.pbf" ]
+CMD [ "/data/russia_northwestern-fed-district.pbf" ]
