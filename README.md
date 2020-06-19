@@ -2,6 +2,9 @@
 maps can be taken from here:
 http://download.geofabrik.de/russia/northwestern-fed-district-latest.osm.pbf
 
+Graph tutorial:
+https://medium.com/generative-design/routing-with-graphs-5fb564b02a74
+
 
 # How to run graphhopper server locally with docker(.pbf (maps) file will be downloaded):
 - `git clone git@github.com:jonndoe/graphhopper.git`
