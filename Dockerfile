@@ -14,7 +14,7 @@ ENV JAVA_OPTS "-Xmx1g -Xms1g -Ddw.server.application_connectors[0].bind_host=0.0
 
 RUN mkdir -p /data
 
-# COPY russia_northwestern-fed-district-latest.osm.pbf ./data
+COPY northwestern-fed-district-latest.osm.pbf ./data
 
 WORKDIR /graphhopper
 

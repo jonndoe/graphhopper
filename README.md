@@ -1,30 +1,37 @@
 
-
+maps can be taken from here:
 http://download.geofabrik.de/russia/northwestern-fed-district-latest.osm.pbf
 
-# How to run with docker:
 
+# How to run graphhopper server locally with docker(.pbf (maps) file will be downloaded):
 - `git clone git@github.com:jonndoe/graphhopper.git`
 - `cd graphhopper`
-
-- now add OpenStreetMaps you need for example: http://download.geofabrik.de/russia/northwestern-fed-district-latest.osm.pbf
-- change Dockerfile CMD as needed for example: `CMD [ "/data/russia_northwestern-fed-district.pbf" ]`
-- this will automatically download osm charts.
-
+- change Dockerfile CMD as needed for example: `CMD [ "/data/russia_northwestern-fed-district.pbf" ]` to automatically download osm charts you need.
 - `sudo docker build -t graphhopper:master .`
 - `mkdir data`
 - `sudo docker run -d --name graphhopper -v data:/data -p 8989:8989 graphhopper:master`
-
+This will take some time to download maps.
 Now go to localhost:8989 and see maps working.
 
 
-- if you want to use already downloaded osm maps then put them into graphopper folder (root dir)
-- in Dockerfile, after `RUN mkdir -p /data` add `# COPY russia_northwestern-fed-district-latest.osm.pbf ./data`
+# How to run graphhopper server locally with docker(use local (maps) .pbf file):
+- `git clone git@github.com:jonndoe/graphhopper.git`
+- `cd graphhopper`
+- now download OpenStreetMaps you need,  for example: http://download.geofabrik.de/russia/northwestern-fed-district-latest.osm.pbf
+- put them into `graphhopper` folder (root dir)
+- in Dockerfile, after `RUN mkdir -p /data` add `COPY northwestern-fed-district-latest.osm.pbf ./data`
+- `sudo docker build -t graphhopper:master .`
+- `mkdir data`
+- `sudo docker run -d --name graphhopper -v data:/data -p 8989:8989 graphhopper:master`
+Now go to localhost:8989 and see maps working.
 
 
 
 
 
+
+
+########################################
 
 
 
