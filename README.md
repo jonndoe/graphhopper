@@ -12,7 +12,7 @@ https://medium.com/generative-design/routing-with-graphs-5fb564b02a74
 - change Dockerfile CMD as needed for example: `CMD [ "/data/russia_northwestern-fed-district.pbf" ]` to automatically download osm charts you need.
 - `sudo docker build -t graphhopper:master .`
 - `mkdir data`
-- `sudo docker run -d --name graphhopper -v data:/data -p 8989:8989 graphhopper:master`
+- `sudo docker run --name graphhopper -v data:/data -p 8989:8989 graphhopper:master`
 This will take some time to download maps.
 Now go to localhost:8989 and see maps working.
 
@@ -25,7 +25,7 @@ Now go to localhost:8989 and see maps working.
 - in Dockerfile, after `RUN mkdir -p /data` add `COPY northwestern-fed-district-latest.osm.pbf ./data`
 - `sudo docker build -t graphhopper:master .`
 - `mkdir data`
-- `sudo docker run -d --name graphhopper -v data:/data -p 8989:8989 graphhopper:master`
+- `sudo docker run --name graphhopper -v data:/data -p 8989:8989 graphhopper:master`
 Now go to localhost:8989 and see maps working.
 
 
