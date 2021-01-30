@@ -6,6 +6,17 @@ Graph tutorial:
 https://medium.com/generative-design/routing-with-graphs-5fb564b02a74
 
 
+### GRAPHHOPPER IS ONLY ROUTING ENGINE! I.E. YOU SEND SOME COORDINATES TO IT, AND IT RETURNS
+### TO YOU SOME WAYPOINTS FOR ROUTE AND SOME INFO FOR THIS ROUTE.
+## Example for Philippines
+
+```
+curl -X GET -H "Content-type: application/json" http://localhost:8989/route?point=14.5114141,121.0580759&point=14.568599,120.9883453
+```
+### ACTUALLY DISPLAYING MAPS IS TASK OF TILE SERVER WHICH IS SEPARATE STRUCTURE.
+
+
+
 # How to run graphhopper server locally with docker(.pbf (maps) file will be downloaded):
 - `git clone git@github.com:jonndoe/graphhopper.git`
 - `cd graphhopper`
@@ -20,7 +31,7 @@ Now go to localhost:8989 and see maps working.
 # How to run graphhopper server locally with docker(use local (maps) .pbf file):
 - `git clone git@github.com:jonndoe/graphhopper.git`
 - `cd graphhopper`
-- now download OpenStreetMaps you need,  for example: http://download.geofabrik.de/russia/northwestern-fed-district-latest.osm.pbf
+- now download OpenStreetMaps you need,  for example: https://download.geofabrik.de/russia/northwestern-fed-district-latest.osm.pbf
 - put them into `graphhopper` folder (root dir)
 - in Dockerfile, after `RUN mkdir -p /data` add `COPY northwestern-fed-district-latest.osm.pbf ./data`
 - `sudo docker build -t graphhopper:master .`

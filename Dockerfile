@@ -28,4 +28,4 @@ EXPOSE 8989
 
 ENTRYPOINT [ "./graphhopper.sh", "web" ]
 
-CMD [ "/data/russia_northwestern-fed-district.pbf" ]
+CMD [ "/data/northwestern-fed-district-latest.osm.pbf" ]
