@@ -13,6 +13,12 @@ https://medium.com/generative-design/routing-with-graphs-5fb564b02a74
 ```
 curl -X GET -H "Content-type: application/json" http://localhost:8989/route?point=14.5114141,121.0580759&point=14.568599,120.9883453
 ```
+## Example for Russia
+
+```
+curl -X POST -H "Content-Type: application/json" "http://localhost:8989/route" -d '{"elevation":false,"points":[[29.913668632507328,59.855840081542276],[30.080566406250004,59.86722789682173]],"vehicle":"car"}'
+```
+
 ### ACTUALLY DISPLAYING MAPS IS TASK OF TILE SERVER WHICH IS SEPARATE STRUCTURE.
 
 
